@@ -13,13 +13,38 @@
     },
     {
       "name": "Teste duplo",
-      "budget": "4000",
+      "budget": "10000",
       "category": {
         "id": "4",
         "name": "Planejamento"
       },
-      "cost": 0,
-      "services": [],
+      "cost": 5000,
+      "services": [
+        {
+          "name": "Adicionando um novo serviço",
+          "cost": "400",
+          "description": "Adicionando",
+          "id": "5ff6d7e0-62c2-4c39-816c-7fcd17d3fffb"
+        },
+        {
+          "name": "Adicionando um novo serviço",
+          "cost": "600",
+          "description": "Adicionando",
+          "id": "860bb97b-c0eb-4df4-9d2a-c4288e3be8e6"
+        },
+        {
+          "name": "Adicionando um novo serviço",
+          "cost": "3000",
+          "description": "Adicionando",
+          "id": "d272d350-2c8a-4f19-bbbf-b40f54b4604a"
+        },
+        {
+          "name": "Adicionando um novo serviço",
+          "cost": "1000",
+          "description": "Adicionando",
+          "id": "ae4ed008-0a0d-42b8-be80-d49f509aa2dd"
+        }
+      ],
       "id": 4
     },
     {
