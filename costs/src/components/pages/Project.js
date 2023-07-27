@@ -8,7 +8,7 @@ import ServiceCard from '../service/ServiceCard';
 
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { parse, v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 function Project(){
 
@@ -72,7 +72,7 @@ function Project(){
         .catch((err) => console.log(err))
     }
 
-    function createService(){
+    function createService(project){
         setMessage('')
         
         const lastService = project.services[project.services.length - 1]
@@ -102,6 +102,7 @@ function Project(){
         .then((response) => response.json())
         .then((data) => {
             setProject(data)
+            setServices(data.services)
             setShowServiceForm(false)
             setMessage("Serviço adicionado com sucesso!")
             setType("success")
@@ -109,11 +110,33 @@ function Project(){
         .catch((err) => console.log(err))
     }
 
-    function removeService(id){
+    function removeService(id, cost){
         setMessage('')
 
+        const serviceUpdate = project.services.filter((service) => service.id !== id)
 
+        const projectUpdate  = project
 
+        projectUpdate.services = serviceUpdate
+        projectUpdate.cost = parseFloat(project.cost) - parseFloat(cost)
+
+        fetch(`http://localhost:3001/projects/${projectUpdate.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(projectUpdate),
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data)
+            setProject(data)
+            setServices(data.services)
+            setMessage("Serviço removido com sucesso!")
+            setType("success")
+        }
+        )
+        .catch((err) => console.log(err))
     }
 
     return(
@@ -147,7 +170,7 @@ function Project(){
                                 </div>
                             )}
                         </div>
-                        <div className={style.service_form_container}>
+                        {/* <div className={style.service_form_container}>
                             <h2>Adicione um serviço:</h2>
                             <button className={style.btn} onClick={toggleServiceForm}>
                                 {!showServiceForm ? 'Adicionar Serviço' : 'Fechar'}
@@ -162,22 +185,41 @@ function Project(){
                                     />
                                 }
                             </div>
-                        </div>
-                        <Container customName="start"> 
+                        </div> */}
+                        <div className={style.service_form_container}>
                             <h2>Serviços</h2>
-                            <div className={style.project_info}>
-                            </div>
-                                {services.length > 0 &&
-                                    services.map((service) => (
-                                        <ServiceCard
-                                        id={service.id}
-                                        name={service.name}
-                                        cost={service.cost}
-                                        description={service.description}
-                                        key={service.id}
-                                        handleOnRemove={removeService} />
-                                ))} {services.length === 0 && <p>Nenhum serviço adicionado</p>}
-                        </Container>
+                            <button className={style.btn} onClick={toggleServiceForm}>
+                                {!showServiceForm ? 'Adicionar Serviço' : 'Fechar'}
+                            </button>
+                            
+                            {!showServiceForm ? (
+                                <>
+                                    <Container customName="around">
+                                        <div className={style.project_info}>
+                                        </div>
+                                            {services.length > 0 &&
+                                                services.map((service) => (
+                                                    <ServiceCard
+                                                    id={service.id}
+                                                    name={service.name}
+                                                    cost={service.cost}
+                                                    description={service.description}
+                                                    key={service.id}
+                                                    handleOnRemove={removeService} />
+                                            ))} {services.length === 0 && <p>Nenhum serviço adicionado</p>}
+                                    </Container>
+                                </>
+                            ) : (
+                                <div className={style.project_info}>
+                                    <ServiceForm 
+                                    handleOnSubmit={createService}
+                                    textBtn="Adicionar Serviço"
+                                    positionBtn="center"
+                                    projectData={project}
+                                    />
+                                </div>
+                            )}
+                        </div>
                     </Container>
                 </div>
                ) 

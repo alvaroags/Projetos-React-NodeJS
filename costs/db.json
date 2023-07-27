@@ -12,62 +12,34 @@
       "id": 3
     },
     {
-      "name": "Teste duplo",
+      "name": "Projeto PHP",
       "budget": "10000",
       "category": {
-        "id": "4",
-        "name": "Planejamento"
+        "id": "2",
+        "name": "Desenvolvimento"
       },
-      "cost": 5000,
+      "cost": 4000,
       "services": [
         {
-          "name": "Adicionando um novo serviço",
-          "cost": "400",
-          "description": "Adicionando",
-          "id": "5ff6d7e0-62c2-4c39-816c-7fcd17d3fffb"
-        },
-        {
-          "name": "Adicionando um novo serviço",
-          "cost": "600",
-          "description": "Adicionando",
-          "id": "860bb97b-c0eb-4df4-9d2a-c4288e3be8e6"
-        },
-        {
-          "name": "Adicionando um novo serviço",
-          "cost": "3000",
-          "description": "Adicionando",
-          "id": "d272d350-2c8a-4f19-bbbf-b40f54b4604a"
-        },
-        {
-          "name": "Adicionando um novo serviço",
+          "name": "Projeto PHP",
           "cost": "1000",
-          "description": "Adicionando",
-          "id": "ae4ed008-0a0d-42b8-be80-d49f509aa2dd"
+          "description": "Planejamento de uma função php",
+          "id": "ca81c7d7-5fc2-4475-8bc4-abd7119027dc"
+        },
+        {
+          "name": "Projeto JS",
+          "cost": "1500",
+          "description": "Criando landing page do site",
+          "id": "6f1cf455-1aaa-4df2-b75a-91bcb73af235"
+        },
+        {
+          "name": "Adicionando um novo serviço",
+          "cost": "1500",
+          "description": "Criando landing page do site",
+          "id": "e1a23cdc-bea6-4539-95a5-be742bcde9fc"
         }
       ],
       "id": 4
-    },
-    {
-      "name": "Alvaro Gomes20",
-      "budget": "9000",
-      "category": {
-        "id": "3",
-        "name": "Design"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 5
-    },
-    {
-      "name": "Testando o flex",
-      "budget": "4500",
-      "category": {
-        "id": "3",
-        "name": "Design"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 7
     },
     {
       "name": "Meu projeto de teste",
@@ -76,9 +48,33 @@
         "id": "2",
         "name": "Desenvolvimento"
       },
+      "cost": 5798,
+      "services": [
+        {
+          "name": "Projeto PHP",
+          "cost": "4811",
+          "description": "Criando landing page do site",
+          "id": "1e4a0ed7-c640-4dc6-89da-1a58748d4a9e"
+        },
+        {
+          "name": "Projeto JS",
+          "cost": "987",
+          "description": "Adicionando",
+          "id": "abfa1454-c373-49b7-b3d0-3dd30bcbe70f"
+        }
+      ],
+      "id": 8
+    },
+    {
+      "category": {
+        "id": "1",
+        "name": "infra"
+      },
+      "name": "Projetão do cost",
+      "budget": "100000",
       "cost": 0,
       "services": [],
-      "id": 8
+      "id": 9
     }
   ],
   "categories": [

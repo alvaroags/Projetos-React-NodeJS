@@ -60,7 +60,7 @@ function Projects(){
                 <h1>Meus Projetos</h1>
                 <LinkButton to="/newProject" text="Novo Projeto" />
             </div>
-            <Container customName="start">
+            <Container customName="around">
             {message && <Message type="success" msg={message} />}
             {removeMessage && <Message type="success" msg={removeMessage} />}
                 {projects.length > 0 && 
