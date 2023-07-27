@@ -23,11 +23,11 @@ export function Select({ text, name, options, value, handleOnChange}){
             name={name} 
             id={name} 
             onChange={handleOnChange} 
-            value={value || ''} >
-                <option disabled>Selecione o tipo de projeto</option>
-                {options.map((option) => (
-                    <option key={option.id} value={option.id}>{option.name}</option>
-                ))}
+            value={value} >
+            <option disabled s >Selecione o tipo de projeto</option>
+            {options.map((option) => (
+                <option key={option.id} value={option.id}>{option.name}</option>
+            ))}
             </select>
         </div>
     )
