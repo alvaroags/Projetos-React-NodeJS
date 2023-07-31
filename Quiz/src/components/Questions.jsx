@@ -8,14 +8,15 @@ import Option from './Option'
 const Questions = () => {
 
     const [quizState, dispath] = useContext(QuizContext)
+
     const currentQuestion = quizState.questions[quizState.currentQuestion]
 
-    const onSelectOption = (option) => {
+    const onSelectOption = (selectOption) => {
         dispath({
             type: "CHECK_ANSWER",
             payload: { 
                 answer: currentQuestion.answer,
-                selectedAnswer: option
+                selectedAnswer: selectOption
         }})
     }
 
@@ -24,6 +25,7 @@ const Questions = () => {
             <p>Pergunta {quizState.currentQuestion + 1} de {quizState.questions.length}</p>
             <h2>{currentQuestion.question}</h2>
             <div className={styles.options_container}>
+                {/* {console.log(currentQuestion)} */}
                 {currentQuestion.options.map((option) => (
                     <Option 
                     key={option} 
@@ -33,6 +35,9 @@ const Questions = () => {
                     />
                 ))}
             </div>
+            {quizState.tipUsed && <p>{currentQuestion.tip}</p>}
+            {!quizState.answerSelected && !quizState.deleteOption && <button onClick={() => dispath({type: "DELETE_OPTION"})}>Excluir uma</button>}
+            {currentQuestion.tip && !quizState.tipUsed && !quizState.answerSelected && <button onClick={() => dispath({type : "USE_TIP"})}>Dica</button>}
             {quizState.answerSelected && 
             <button onClick={() => dispath({type : "CHANGE_QUESTION" })}>
                 Continuar

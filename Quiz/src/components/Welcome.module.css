@@ -13,4 +13,9 @@
 
 .welcome img{
     margin-top: 2rem;
+    max-height: 400px;
+}
+
+.buttonCategory{
+    margin: 1rem;
 }
