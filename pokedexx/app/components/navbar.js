@@ -11,8 +11,12 @@ export default function Navbar() {
                 <h1>Pokedexx</h1>
             </div>
             <ul className={styles.link_items}>
-                <li><Link href="/" /><a>Home</a></li>
-                <li><Link href="/about" /><a>Sobre</a></li>
+                <li>
+                    <Link href="/">Home</Link>
+                </li>
+                <li>
+                    <Link href="/about">Sobre</Link>
+                </li>
             </ul>
         </nav>
     )

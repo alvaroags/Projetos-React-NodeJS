@@ -75,6 +75,47 @@
       "cost": 0,
       "services": [],
       "id": 9
+    },
+    {
+      "name": "Projeto PHP",
+      "budget": "15000",
+      "category": {
+        "id": "3",
+        "name": "Design"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 10
+    },
+    {
+      "name": "Criação de aplicativo para Uber",
+      "budget": "15000",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "cost": 4200,
+      "services": [
+        {
+          "name": "Criar o layout",
+          "cost": "1200",
+          "description": "Criação do layout para o aplicativo",
+          "id": "25ef065d-d986-43c2-acc8-7faf53396b0e"
+        },
+        {
+          "name": "Criar o backend",
+          "cost": "1500",
+          "description": "Criar banco de dados com php",
+          "id": "b4bd7889-0cc2-4ff5-8fdb-e68eb1a5ed40"
+        },
+        {
+          "name": "Projeto PHP",
+          "cost": "1500",
+          "description": "Adicionando",
+          "id": "339c9c75-a1c8-4149-bfef-1c5744ed64df"
+        }
+      ],
+      "id": 11
     }
   ],
   "categories": [
